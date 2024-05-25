@@ -1,0 +1,104 @@
+---
+import "@/styles/globals.css";
+---
+
+<header
+  class="relative mx-6 mb-[2.12rem] mt-[2.19rem] flex items-center justify-between md:my-16 md:ml-[2.44rem] md:mr-[2.62rem] md:gap-[7.63rem] xl:mb-[4.19rem] xl:ml-[10.31rem] xl:mr-[10.37rem] xl:mt-16"
+>
+  <div class="flex items-center justify-between gap-[6.63rem]">
+    <!-- Logo -->
+    <a href="/" class="">
+      <img
+        src="/images/shared/desktop/logo-dark.png"
+        alt=""
+        class="w-[12.31rem]"
+      />
+    </a>
+    <!-- Hamburger Menu  -->
+    <img
+      src="/images/shared/mobile/icon-hamburger.svg"
+      alt=""
+      class="md:max-2xl:hidden"
+      id="openMenu"
+    />
+    <!-- Close Menu -->
+    <img
+      src="/images/shared/mobile/icon-close.svg"
+      alt=""
+      class="hidden"
+      id="closeMenu"
+    />
+  </div>
+  <!-- Mobile Menu  -->
+  <nav
+    class="absolute left-0 top-24 z-50 w-[100%] bg-[#1D1C1E] px-6 py-12 md:max-2xl:hidden"
+    id="mobileMenu"
+  >
+    <ul class="flex flex-col gap-8">
+      <li class="">
+        <a
+          href="/about"
+          class="cursor-pointer text-2xl font-normal uppercase leading-[1.5625rem] tracking-[0.125rem] text-white transition-all duration-300 ease-in hover:underline"
+          >Our Company</a
+        >
+      </li>
+      <li class="">
+        <a
+          href="/locations"
+          class="cursor-pointer text-2xl font-normal uppercase leading-[1.5625rem] tracking-[0.125rem] text-white transition-all duration-300 ease-in hover:underline"
+          >Locations</a
+        >
+      </li>
+      <li class="">
+        <a
+          href="/contact"
+          class="cursor-pointer text-2xl font-normal uppercase leading-[1.5625rem] tracking-[0.125rem] text-white transition-all duration-300 ease-in hover:underline"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <!-- Tablet & Desktop Menu -->
+  <nav class="hidden md:max-2xl:flex">
+    <ul class="flex items-center gap-[2.62rem]">
+      <li class="">
+        <a
+          href="/about"
+          class="cursor-pointer text-sm font-normal leading-[0.575] tracking-[0.125rem] text-[#333136] transition-all duration-300 ease-in hover:underline"
+          >Our Company</a
+        >
+      </li>
+      <li class="">
+        <a
+          href="/locations"
+          class="cursor-pointer text-sm font-normal leading-[0.575] tracking-[0.125rem] text-[#333136] transition-all duration-300 ease-in hover:underline"
+          >Locations</a
+        >
+      </li>
+      <li class="">
+        <a
+          href="/contact"
+          class="cursor-pointer text-sm font-normal leading-[0.575] tracking-[0.125rem] text-[#333136] transition-all duration-300 ease-in hover:underline"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script is:inline>
+  const openMenu = document.getElementById("openMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  openMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("hidden");
+    openMenu.classList.add("hidden");
+    closeMenu.classList.remove("hidden");
+  });
+  closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+    openMenu.classList.remove("hidden");
+    closeMenu.classList.add("hidden");
+  });
+</script>
